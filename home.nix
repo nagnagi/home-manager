@@ -5,6 +5,8 @@
   home.stateVersion = "26.05";
   targets.genericLinux.enable = true;
   programs.home-manager.enable = true;
+
+  programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
   home.packages = with pkgs; [ ];
 }
