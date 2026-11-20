@@ -1,4 +1,3 @@
-# ~/nix-config/flake.nix
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";

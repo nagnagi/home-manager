@@ -1,4 +1,3 @@
-# ~/nix-config/home.nix
 { pkgs, ... }: {
   home.username = "nag";
   home.homeDirectory = "/home/nag";
