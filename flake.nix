@@ -6,16 +6,26 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, home-manager, ... }: {
-    homeConfigurations = {
-      "nag@HOMEBUILT1" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [ ./home.nix ./hosts/HOMEBUILT1.nix ];
+  outputs = { nixpkgs, home-manager, ... }:
+    let
+      makeHome = { system, host }:
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [
+          ./common
+          ./hosts/${host}.nix
+        ];
       };
-      "nag@cffv" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [ ./home.nix ./hosts/cffv.nix ];
+    in {
+      homeConfigurations = {
+        "nag@HOMEBUILT1" = makeHome {
+          system = "x86_64-linux";
+          host = "HOMEBUILT1";
+        };
+        "nag@cffv" = makeHome {
+          system = "x86_64-linux";
+          host = "cffv";
+        };
       };
     };
-  };
 }
