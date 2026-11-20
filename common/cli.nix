@@ -2,6 +2,9 @@
   home.packages = with pkgs; [
     hostname
     zoxide
+    rclone
+    wget
+    zip
   ];
 
   programs.btop = {
