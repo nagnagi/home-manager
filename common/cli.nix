@@ -25,6 +25,21 @@
   programs.vim = {
     enable = true;
   };
+  programs.fd = {
+    enable = true;
+  };
+  programs.ripgrep = {
+    enable = true;
+  };
+  programs.tmux = {
+    enable = true;
+  };
+  programs.gh = {
+    enable = true;
+  };
+  programs.uv = {
+    enable = true;
+  };
 
   services.pueue = {
     enable = true;
