@@ -7,7 +7,7 @@
     };
   };
   outputs = { nixpkgs, home-manager, ... }: {
-    homeConfigurations.nag = home-manager.lib.homeManagerConfiguration {
+    "nag@HOMEBUILT1" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = [ ./home.nix ];
     };
