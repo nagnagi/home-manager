@@ -12,6 +12,10 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [ ./home.nix ./hosts/HOMEBUILT1.nix ];
       };
+      "nag@cffv" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [ ./home.nix ./hosts/cffv.nix ];
+      };
     };
   };
 }
