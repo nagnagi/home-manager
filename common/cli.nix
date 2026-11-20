@@ -23,6 +23,9 @@
   programs.nnn = {
     enable = true;
   };
+  programs.vim = {
+    enable = true;
+  };
 
   services.pueue = {
     enable = true;
