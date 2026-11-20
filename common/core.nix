@@ -12,8 +12,4 @@
       email = "nag.nagipon@gmail.com";
     };
   };
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
 }
