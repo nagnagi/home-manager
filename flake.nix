@@ -13,7 +13,7 @@
         pkgs = nixpkgs.legacyPackages.${system};
         modules = [
           ./common
-          ./hosts/${host}.nix
+          ./hosts/${host}/home.nix
         ];
       };
     in {
