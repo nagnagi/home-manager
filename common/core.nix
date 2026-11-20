@@ -4,6 +4,7 @@
   };
   programs.git = {
     enable = true;
+    lfs = true;
     settings.user = {
       name = "nagnagi";
       email = "nag.nagipon@gmail.com";
