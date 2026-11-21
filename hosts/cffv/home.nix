@@ -4,6 +4,7 @@
   home.stateVersion = "26.05";
   imports = [
     ../../profiles/genericLinux.nix
+    ../../profiles/fonts.nix
     ../../profiles/gui
   ];
 }
