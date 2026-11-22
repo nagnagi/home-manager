@@ -31,6 +31,10 @@
           system = "x86_64-linux";
           host = "cffv";
         };
+        "nag@cfsz-server" = mkHome {
+          system = "x86_64-linux";
+          host = "cfsz-server";
+        };
       };
     };
 }
