@@ -10,15 +10,37 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, nix-index-database, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, nix-index-database, home-manager, ... }:
     let
-      mkHome = { system, host }:
-      home-manager.lib.homeManagerConfiguration {
+      mkHome = { system, host }: home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         modules = [
           nix-index-database.homeModules.nix-index
           ./common
           ./hosts/${host}/home.nix
+        ];
+      };
+
+      mkNixHome = { host }: nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/${host}/configuration.nix
+          home-manager.nixosModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = { inherit inputs; };
+              sharedModules = [
+                inputs.nix-index-database.homeModules.nix-index
+              ];
+              users.nag = {
+                imports = [
+                  ./common
+                  ./hosts/${host}/home.nix
+                ];
+              };
+            };
+          }
         ];
       };
     in {
@@ -34,6 +56,11 @@
         "nag@cfsz-server" = mkHome {
           system = "x86_64-linux";
           host = "cfsz-server";
+        };
+      };
+      nixosConfigurations = {
+        uh = mkNixHome {
+          host = "uh";
         };
       };
     };
