@@ -7,7 +7,7 @@
     ../../profiles/genericLinux.nix
     ../../profiles/fonts.nix
     ../../profiles/gui
-    ../../profiles/window-manager.nix
+    ../../profiles/window-manager/sway.nix
   ];
 
   wayland.windowManager.sway.package = null;
