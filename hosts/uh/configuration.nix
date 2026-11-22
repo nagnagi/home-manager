@@ -55,6 +55,7 @@
   users.users."nag" = {
     isNormalUser = true;
     description = "nag";
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
@@ -80,6 +81,9 @@
   };
 
   # You might need these:
+  programs.zsh = {
+    enable = true;
+  };
   programs.vim = {
     enable = true;
     defaultEditor = true;

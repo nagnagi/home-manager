@@ -6,6 +6,7 @@
     ../../profiles/fonts.nix
     ../../profiles/gui
     ../../profiles/window-manager/sway.nix
+    ../../profiles/zsh/zsh.nix
   ];
 
   wayland.windowManager.sway.config = {

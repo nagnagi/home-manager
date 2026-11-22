@@ -259,7 +259,7 @@ ranger-cd() {
 
 # direnv
 # eval "$(direnv hook zsh)"
-source $HOME/.zsh/direnv.zsh
+# source $HOME/.zsh/direnv.zsh
 
 # alipath
 # eval $(alipath --env zsh)
