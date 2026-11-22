@@ -10,12 +10,12 @@
     ../../profiles/window-manager/sway.nix
   ];
 
-  wayland.windowManager.sway.package = null;
   wayland.windowManager.sway.config = {
     output = {
       eDP-1 = {
         mode = "2160x1440@600.0Hz";
         scale = "1.25";
+        bg = "${pkgs.sway}/share/backgrounds/sway/Sway_Wallpaper_Blue_2048x1536.png fill";
       };
     };
   };
