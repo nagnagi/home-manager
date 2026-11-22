@@ -20,6 +20,5 @@
     };
   };
 
-  programs.vim.package = null;
   programs.emacs.package = pkgs.emacs-pgtk;
 }

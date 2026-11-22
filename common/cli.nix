@@ -29,7 +29,6 @@
   };
   programs.vim = {
     enable = true;
-    package = null;
   };
   programs.fd = {
     enable = true;
