@@ -1,4 +1,8 @@
 { pkgs, lib, config, ... }: {
+  programs.waybar = {
+    enable = true;
+  };
+
   wayland.windowManager.sway = let
       modifier = "Mod4";
       terminal = "footclient";
