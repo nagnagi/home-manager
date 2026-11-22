@@ -12,7 +12,7 @@
   };
   outputs = { nixpkgs, nix-index-database, home-manager, ... }:
     let
-      makeHome = { system, host }:
+      mkHome = { system, host }:
       home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         modules = [
@@ -23,11 +23,11 @@
       };
     in {
       homeConfigurations = {
-        "nag@HOMEBUILT1" = makeHome {
+        "nag@HOMEBUILT1" = mkHome {
           system = "x86_64-linux";
           host = "HOMEBUILT1";
         };
-        "nag@cffv" = makeHome {
+        "nag@cffv" = mkHome {
           system = "x86_64-linux";
           host = "cffv";
         };
