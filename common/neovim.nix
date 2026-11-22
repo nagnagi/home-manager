@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, config, ... }: {
   home.packages = with pkgs; [
     tree-sitter
     deno
