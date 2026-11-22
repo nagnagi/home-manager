@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     tree-sitter
     deno
+    typos-lsp
   ];
 
   programs.neovim = {
