@@ -7,6 +7,7 @@
     ../../profiles/gui
     ../../profiles/window-manager/sway.nix
     ../../profiles/zsh/zsh.nix
+    ../../profiles/input-method.nix
   ];
 
   wayland.windowManager.sway.config = {

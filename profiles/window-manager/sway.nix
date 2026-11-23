@@ -27,7 +27,7 @@
 
       startup = [
         { command = "mako"; }
-        { command = "fcitx5"; }
+        { command = "fcitx5 -d"; }
         {
           command = let
             binDir = "${pkgs.waybar}/bin";
