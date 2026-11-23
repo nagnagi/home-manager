@@ -106,6 +106,9 @@
     enable = true;
   };
 
+  # Build tools:
+  programs.nix-ld.enable = true;
+
   # Services:
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
