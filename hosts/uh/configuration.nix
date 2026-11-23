@@ -74,6 +74,7 @@
   #   enableSSHSupport = true;
   # };
 
+  # Login session:
   services.greetd = {
     enable = true;
     settings = {
@@ -87,7 +88,7 @@
     };
   };
 
-  # Wayland Compositor:
+  # Wayland compositor:
   programs.sway = {
     enable = true;
     xwayland.enable = true;
