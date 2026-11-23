@@ -84,7 +84,7 @@
         # "${modifier}+Shift+n" = "move scratchpad" ;
 
         "${modifier}+i" = "workspace next";
-        "${modifier}+o" = "workspace next";
+        "${modifier}+o" = "workspace prev";
         "${modifier}+Shift+i" = "move container to workspace next";
         "${modifier}+Shift+o" = "move container to workspace prev";
 
