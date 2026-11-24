@@ -87,6 +87,8 @@
   };
 
   # Services:
+  home-manager.backupFileExtension = "bkup";
+
   services.openssh = {
     enable = true;
     ports = [ 22 ];
@@ -97,6 +99,23 @@
     };
   };
   networking.firewall.allowedTCPPorts = [ 22 ];
+
+  services.tailscale = {
+    enable = true;
+    port = 41641;
+    derper.port = 8010;
+    openFirewall = false;
+  };
+  # services.tailscale.serve = {
+  # enable = true;
+  #   services = {
+  #     web-server = {
+  #       endpoints = {
+  #         "tcp:443" = "https://localhost:443";
+  #       };
+  #     };
+  #   };
+  # };
 
   # Build tools:
   programs.nix-ld.enable = true;
