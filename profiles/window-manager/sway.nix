@@ -1,4 +1,8 @@
 { pkgs, lib, config, ... }: {
+  home.packages = with pkgs; [
+    xwayland-satellite
+  ];
+
   programs.waybar = {
     enable = true;
   };
@@ -28,6 +32,7 @@
       startup = [
         { command = "mako"; }
         { command = "fcitx5 -d"; }
+        { command = "xwayland-satellite"; }
         {
           command = let
             binDir = "${pkgs.waybar}/bin";
