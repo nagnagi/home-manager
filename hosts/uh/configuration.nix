@@ -110,6 +110,8 @@
   programs.nix-ld.enable = true;
 
   # Services:
+  home-manager.backupFileExtension = "bkup";
+
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
