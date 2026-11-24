@@ -36,9 +36,6 @@
   programs.ripgrep = {
     enable = true;
   };
-  programs.tmux = {
-    enable = true;
-  };
   programs.gh = {
     enable = true;
   };
