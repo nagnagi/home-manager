@@ -27,9 +27,6 @@
   programs.nnn = {
     enable = true;
   };
-  programs.vim = {
-    enable = true;
-  };
   programs.fd = {
     enable = true;
   };
