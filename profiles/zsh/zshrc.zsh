@@ -172,9 +172,9 @@ function zle-keymap-select() {
 }
 zle -N zle-keymap-select
 
-function zle-line-init() {
-  zle -K viins
-}
+# function zle-line-init() {
+#   zle -K viins
+# }
 # zle -N zle-line-init
 
 # OSC2
