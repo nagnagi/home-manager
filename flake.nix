@@ -14,7 +14,7 @@
     let
       suites = (import ./suites) nixpkgs.lib;
       mkHome = { system, host }: home-manager.lib.homeManagerConfiguration {
-        specialArgs = {
+        extraSpecialArgs = {
           inherit suites;
         };
         pkgs = nixpkgs.legacyPackages.${system};
