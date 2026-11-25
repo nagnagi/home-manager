@@ -16,7 +16,7 @@
         pkgs = nixpkgs.legacyPackages.${system};
         modules = [
           nix-index-database.homeModules.nix-index
-          ./common
+          ./home/common
           ./hosts/${host}/home.nix
         ];
       };
@@ -35,7 +35,7 @@
               ];
               users.nag = {
                 imports = [
-                  ./common
+                  ./home/common
                   ./hosts/${host}/home.nix
                 ];
               };

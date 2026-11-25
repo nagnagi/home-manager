@@ -3,7 +3,7 @@
   home.homeDirectory = "/home/nag";
   home.stateVersion = "26.05";
   imports = [
-    ../../profiles/home/genericLinux.nix
-    ../../profiles/home/zsh/zsh.nix
+    ../../home/profiles/genericLinux.nix
+    ../../home/profiles/zsh/zsh.nix
   ];
 }
