@@ -2,9 +2,8 @@
   home.username = "nag";
   home.homeDirectory = "/home/nag";
   home.stateVersion = "26.05";
-  imports = [
-    ../../home/profiles/genericLinux.nix
-  ] ++ lib.flatten [
+  imports = lib.flatten [
+    suites.generic-linux.home
     suites.develop.home
   ];
 }

@@ -1,10 +1,6 @@
 { pkgs, ... }: {
   home.stateVersion = "26.05";
 
-  imports = [
-    ../../home/profiles/desktop/app
-  ];
-
   wayland.windowManager.sway.config = {
     output = {
       eDP-1 = {

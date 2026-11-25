@@ -4,11 +4,10 @@
   home.stateVersion = "26.05";
 
   imports = [
-    ../../home/profiles/genericLinux.nix
-    ../../home/profiles/desktop/app
-  ] ++ lib.flatten [
     suites.sway.home
     suites.develop.home
+    suites.generic-linux.home
+    suites.apps.home
   ];
 
   wayland.windowManager.sway.config = {

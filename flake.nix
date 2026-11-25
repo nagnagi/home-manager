@@ -12,7 +12,7 @@
   };
   outputs = inputs@{ nixpkgs, nix-index-database, home-manager, ... }:
     let
-      suites = (import ./suites) nixpkgs.lib;
+      suites = import ./suites;
       internal = import ./lib;
       mkHome = { system, host }: home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {
@@ -34,6 +34,7 @@
         };
         modules = [
           ./hosts/${host}/configuration.nix
+          ./nixos/common
           home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;

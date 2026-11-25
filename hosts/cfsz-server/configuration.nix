@@ -9,9 +9,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./suites.nix
-      ../../nixos/common
-      ../../nixos/profiles/tailscale.nix
-      ../../nixos/profiles/server/sshd.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
