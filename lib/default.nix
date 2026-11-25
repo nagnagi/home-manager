@@ -1,3 +1,3 @@
 {
-  loadsuites = import ./loadSuites.nix;
+  loadSuites = import ./loadSuites.nix;
 }

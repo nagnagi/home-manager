@@ -13,11 +13,10 @@
   outputs = inputs@{ nixpkgs, nix-index-database, home-manager, ... }:
     let
       suites = (import ./suites) nixpkgs.lib;
-      internal = (import ./lib) nixpkgs.lib;
+      internal = import ./lib;
       mkHome = { system, host }: home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {
           inherit suites;
-          inherit internal;
         };
         pkgs = nixpkgs.legacyPackages.${system};
         modules = [
@@ -31,6 +30,7 @@
         specialArgs = {
           inherit inputs;
           inherit suites;
+          inherit internal;
         };
         modules = [
           ./hosts/${host}/configuration.nix
