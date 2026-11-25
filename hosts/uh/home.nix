@@ -2,12 +2,12 @@
   home.stateVersion = "26.05";
 
   imports = [
-    ../../home/profiles/fonts.nix
-    ../../home/profiles/gui
-    ../../home/profiles/window-manager/sway.nix
+    ../../home/profiles/desktop/app
+    ../../home/profiles/desktop/window-manager/sway.nix
+    ../../home/profiles/desktop/input-method.nix
+    ../../home/profiles/desktop/fonts.nix
     ../../home/profiles/zsh/zsh.nix
     ../../home/profiles/neovim.nix
-    ../../home/profiles/input-method.nix
   ];
 
   wayland.windowManager.sway.config = {
