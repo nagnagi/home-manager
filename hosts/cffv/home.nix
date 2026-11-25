@@ -1,14 +1,14 @@
-{ pkgs, ... }: {
+{ pkgs, lib, suites, ... }: {
   home.username = "nag";
   home.homeDirectory = "/home/nag";
   home.stateVersion = "26.05";
 
   imports = [
-    ./suites.nix
     ../../home/profiles/genericLinux.nix
     ../../home/profiles/desktop/app
-    ../../home/profiles/zsh/zsh.nix
-    ../../home/profiles/neovim.nix
+  ] ++ lib.flatten [
+    suites.sway.home
+    suites.develop.home
   ];
 
   wayland.windowManager.sway.config = {

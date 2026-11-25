@@ -3,11 +3,6 @@
 
   imports = [
     ../../home/profiles/desktop/app
-    ../../home/profiles/desktop/window-manager/sway.nix
-    ../../home/profiles/desktop/input-method.nix
-    ../../home/profiles/desktop/fonts.nix
-    ../../home/profiles/zsh/zsh.nix
-    ../../home/profiles/neovim.nix
   ];
 
   wayland.windowManager.sway.config = {

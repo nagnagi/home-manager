@@ -4,5 +4,6 @@
   ];
   home-manager.sharedModules = lib.flatten [
     suites.sway.home
+    suites.develop.home
   ];
 }
