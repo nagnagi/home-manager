@@ -1,9 +1,6 @@
-{ suites, lib, ... }: {
-  imports = lib.flatten [
-    suites.sway.nixos
-  ];
-  home-manager.sharedModules = lib.flatten [
-    suites.sway.home
-    suites.develop.home
+{ suites, lib, internal, ... }: {
+  imports = internal.loadSuites lib [
+    suites.sway
+    suites.develop
   ];
 }

@@ -1,0 +1,3 @@
+{
+  loadsuites = import ./loadSuites.nix;
+}
