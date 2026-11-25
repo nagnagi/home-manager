@@ -6,6 +6,7 @@
   imports = [
     ../../home/profiles/genericLinux.nix
     ../../home/profiles/zsh/zsh.nix
+    ../../home/profiles/neovim.nix
     ../../home/profiles/fonts.nix
     ../../home/profiles/gui
     ../../home/profiles/window-manager/sway.nix

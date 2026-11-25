@@ -5,5 +5,6 @@
   imports = [
     ../../home/profiles/genericLinux.nix
     ../../home/profiles/zsh/zsh.nix
+    ../../home/profiles/neovim.nix
   ];
 }

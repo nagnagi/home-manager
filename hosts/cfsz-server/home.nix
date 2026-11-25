@@ -3,5 +3,6 @@
 
   imports = [
     ../../home/profiles/zsh/zsh.nix
+    ../../home/profiles/neovim.nix
   ];
 }

@@ -6,6 +6,7 @@
     ../../home/profiles/gui
     ../../home/profiles/window-manager/sway.nix
     ../../home/profiles/zsh/zsh.nix
+    ../../home/profiles/neovim.nix
     ../../home/profiles/input-method.nix
   ];
 
