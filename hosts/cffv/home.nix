@@ -4,9 +4,9 @@
   home.stateVersion = "26.05";
 
   imports = [
-    suites.sway.home
-    suites.develop.home
     suites.generic-linux.home
+    suites.develop.home
+    suites.sway.home
     suites.apps.home
   ];
 
