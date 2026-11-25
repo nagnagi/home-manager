@@ -12,7 +12,11 @@
   };
   outputs = inputs@{ nixpkgs, nix-index-database, home-manager, ... }:
     let
+      suites = (import ./suites) nixpkgs.lib;
       mkHome = { system, host }: home-manager.lib.homeManagerConfiguration {
+        specialArgs = {
+          inherit suites;
+        };
         pkgs = nixpkgs.legacyPackages.${system};
         modules = [
           nix-index-database.homeModules.nix-index
@@ -22,7 +26,10 @@
       };
 
       mkNixHome = { host }: nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          inherit inputs;
+          inherit suites;
+        };
         modules = [
           ./hosts/${host}/configuration.nix
           home-manager.nixosModules.home-manager {

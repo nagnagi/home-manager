@@ -8,9 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./suites.nix
       ../../nixos/common
-      ../../nixos/profiles/greetd.nix
-      ../../nixos/profiles/sway.nix
       ../../nixos/profiles/tailscale.nix
     ];
 
