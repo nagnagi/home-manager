@@ -8,6 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../nixos/common
+      ../../nixos/profiles/greetd.nix
+      ../../nixos/profiles/sway.nix
+      ../../nixos/profiles/tailscale.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -73,59 +77,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # Login session:
-  services.greetd = {
-    enable = true;
-    settings = {
-      terminal = {
-        vt = 1;
-      };
-      default_session = {
-        user = "greeter";
-        command = "${pkgs.greetd}/bin/agreety --cmd sway";
-      };
-    };
-  };
-
-  # Wayland compositor:
-  programs.sway = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  # You might need these:
-  programs.zsh = {
-    enable = true;
-  };
-  programs.vim = {
-    enable = true;
-    defaultEditor = true;
-  };
-  programs.git = {
-    enable = true;
-  };
-
-  # Build tools:
-  programs.nix-ld.enable = true;
-
-  # Services:
-  home-manager.backupFileExtension = "bkup";
-
-  services.flatpak.enable = true;
-  systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
-
-  # Enable nix <command> commands:
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   # List services that you want to enable:
 

@@ -8,6 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../nixos/common
+      ../../nixos/profiles/tailscale.nix
+      ../../nixos/profiles/server/sshd.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -74,38 +77,6 @@
   #   enableSSHSupport = true;
   # };
 
-  # You might need these:
-  programs.zsh = {
-    enable = true;
-  };
-  programs.vim = {
-    enable = true;
-    defaultEditor = true;
-  };
-  programs.git = {
-    enable = true;
-  };
-
-  # Services:
-  home-manager.backupFileExtension = "bkup";
-
-  services.openssh = {
-    enable = true;
-    ports = [ 22 ];
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "no";
-      KbdInteractiveAuthentication = false;
-    };
-  };
-  networking.firewall.allowedTCPPorts = [ 22 ];
-
-  services.tailscale = {
-    enable = true;
-    port = 41641;
-    derper.port = 8010;
-    openFirewall = false;
-  };
   # services.tailscale.serve = {
   # enable = true;
   #   services = {
@@ -116,15 +87,6 @@
   #     };
   #   };
   # };
-
-  # Build tools:
-  programs.nix-ld.enable = true;
-
-  # Enable nix <command> commands:
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   # List services that you want to enable:
 
