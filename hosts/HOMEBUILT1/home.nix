@@ -5,5 +5,6 @@
   imports = lib.flatten [
     suites.generic-linux.home
     suites.develop.home
+    suites.vimextra.home
   ];
 }
