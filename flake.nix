@@ -65,6 +65,9 @@
         };
       };
       nixosConfigurations = {
+        default = mkNixHome {
+          host = "default";
+        };
         uh = mkNixHome {
           host = "uh";
         };
