@@ -40,7 +40,6 @@
           in
             "${binDir}/waybar -c ${cfgDir}/config.jsonc -s ${cfgDir}/style.css";
         }
-        { command = "foot -s"; }
       ];
 
       input = {
