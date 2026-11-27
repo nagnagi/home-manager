@@ -13,7 +13,7 @@
   home.activation.cloneNvimConfig =
     lib.hm.dag.entryAfter ["linkGeneration" ] ''
       NVIM_DIR="${config.xdg.configHome}/nvim"
-      REPO_URL="git@github.com:nagnagi/nvim.git"
+      REPO_URL="https://github.com/nagnagi/nvim.git"
 
       if [ ! -d "$NVIM_DIR" ]; then
         $DRY_RUN_CMD ${pkgs.git}/bin/git \
